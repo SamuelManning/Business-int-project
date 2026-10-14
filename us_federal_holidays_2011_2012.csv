@@ -1,0 +1,21 @@
+﻿date,holiday,observed_in_lieu_of_weekend,schedule_year
+31/12/2010,New Year's Day,TRUE,2011
+17/01/2011,"Birthday of Martin Luther King, Jr.",FALSE,2011
+21/02/2011,Washington's Birthday,FALSE,2011
+30/05/2011,Memorial Day,FALSE,2011
+04/07/2011,Independence Day,FALSE,2011
+05/09/2011,Labor Day,FALSE,2011
+10/10/2011,Columbus Day,FALSE,2011
+11/11/2011,Veterans Day,FALSE,2011
+24/11/2011,Thanksgiving Day,FALSE,2011
+26/12/2011,Christmas Day,TRUE,2011
+02/01/2012,New Year's Day,TRUE,2012
+16/01/2012,"Birthday of Martin Luther King, Jr.",FALSE,2012
+20/02/2012,Washington's Birthday,FALSE,2012
+28/05/2012,Memorial Day,FALSE,2012
+04/07/2012,Independence Day,FALSE,2012
+03/09/2012,Labor Day,FALSE,2012
+08/10/2012,Columbus Day,FALSE,2012
+12/11/2012,Veterans Day,TRUE,2012
+22/11/2012,Thanksgiving Day,FALSE,2012
+25/12/2012,Christmas Day,FALSE,2012
