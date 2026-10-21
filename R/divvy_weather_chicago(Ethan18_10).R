@@ -34,7 +34,7 @@ daily <- trips |>
     precip_cat = cut(precip_in, breaks = c(-Inf, 0, 0.1, 0.3, Inf),
                      labels = c("Dry", "Light (<0.1 in)", "Moderate (0.1-0.3 in)", "Heavy (>0.3 in)")),
     temp_band  = cut(temp_mean_f, breaks = c(-Inf, 32, 45, 60, Inf),
-                     labels = c("Freezing (<32°F)", "Cold (32-45°F)", "Cool (45-60°F)", "Mild (>60°F)")),
+                     labels = c("Freezing (<32°F)", "Cold (32-45°F)", "Cool (45-60°F)", "Mild (>60°F)")), # this is personal guesstimation
     snow_day   = if_else(snow_in > 0, "Snow", "No snow")
   )
 
@@ -47,13 +47,13 @@ save_plot <- function(p, name, w = 9, h = 5.5) {
 
 scale_f <- max(daily$rides) / max(daily$temp_mean_f)
 p1 <- ggplot(daily, aes(date)) +
-  geom_col(aes(y = rides), fill = "grey70") +
+  geom_col(aes(y = rides), fill = "grey70") + # ggplots bar chart
   geom_line(aes(y = temp_mean_f * scale_f), colour = "firebrick", linewidth = 1) +
-  scale_y_continuous(
+  scale_y_continuous( # add the rides per day as a y axis label
     name = "Rides per day", labels = comma,
     sec.axis = sec_axis(~ . / scale_f, name = "Mean temperature (°F)")
   ) +
-  labs(title = "Daily Divvy rides vs. mean temperature",
+  labs(title = "Daily Divvy rides vs. mean temperature",  # Labels might need to change
        subtitle = "Bars = rides, red line = mean temp", x = NULL)
 save_plot(p1, "01_daily_rides_and_temp.png")
 
@@ -119,7 +119,7 @@ hourly <- trips |>
 
 p8 <- ggplot(hourly, aes(hour, avg_rides, colour = temp_band)) +
   geom_line(linewidth = 1) +
-  scale_x_continuous(breaks = seq(0, 23, 3)) +
+  scale_x_continuous(breaks = seq(0, 23, 3)) + # 0 to 23 up by 3
   labs(title = "Average rides per hour by temperature band",
        x = "Hour of day", y = "Avg rides per day", colour = NULL)
 save_plot(p8, "08_hourly_profile_by_temp.png")
@@ -130,5 +130,5 @@ daily |>
   round(2) |>
   print()
 
-# Optional: save the daily joined table for further analysis
+# save the daily joined table for further analysis
 write_csv(daily, "daily_rides_weather.csv")
