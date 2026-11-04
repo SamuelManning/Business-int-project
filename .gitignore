@@ -51,3 +51,5 @@ rsconnect/
 
 data_raw/
 *.zip
+.Rproj.user
+.Rproj.user
