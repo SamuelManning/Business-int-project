@@ -1,0 +1,40 @@
+CTA Daily Boarding Totals 2025 - Data quality report
+
+Rows in raw file (2001-2026): 9374 
+Rows in 2025: 365 
+Duplicate days: 0 
+Missing days: 0 
+Missing values: 0 
+Days where bus + rail is not the total: 0 
+
+Summary of boardings per day:
+    cta_bus          cta_rail        cta_total      
+ Min.   :184004   Min.   : 97129   Min.   : 281133  
+ 1st Qu.:445037   1st Qu.:316913   1st Qu.: 767968  
+ Median :601896   Median :400442   Median : 998893  
+ Mean   :546983   Mean   :379159   Mean   : 926142  
+ 3rd Qu.:655612   3rd Qu.:449582   3rd Qu.:1095567  
+ Max.   :714964   Max.   :578528   Max.   :1230328  
+
+Mean boardings per day type:
+# A tibble: 3 × 3
+  day_type  days mean_total
+  <chr>    <int>      <dbl>
+1 A           52     755189
+2 U           58     567813
+3 W          255    1042505
+
+Unusual days (kept in the data):
+# A tibble: 10 × 4
+   date       weekday holiday_name               cta_total
+   <date>     <ord>   <chr>                          <dbl>
+ 1 2025-01-20 Mon     Martin Luther King Jr. Day    448307
+ 2 2025-01-21 Tue     <NA>                          530886
+ 3 2025-02-17 Mon     Presidents' Day               645274
+ 4 2025-03-15 Sat     <NA>                         1038464
+ 5 2025-10-12 Sun     <NA>                          871608
+ 6 2025-11-28 Fri     <NA>                          638736
+ 7 2025-12-24 Wed     <NA>                          592719
+ 8 2025-12-25 Thu     Christmas Day                 281133
+ 9 2025-12-26 Fri     <NA>                          629973
+10 2025-12-29 Mon     <NA>                          674496
