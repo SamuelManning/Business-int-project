@@ -52,5 +52,5 @@ rsconnect/
 data_raw/
 *.zip
 
-data_clean/samuel_chicago_data/Data_Raw/
-data_clean/samuel_chicago_data/Bike_Data/divvy_clean.csv
+.Rproj.user
+.Rproj.user
